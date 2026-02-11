@@ -9,7 +9,7 @@
 | 文档 | 说明 |
 |------|------|
 | [framework-api.md](framework-api.md)（本文档） | 框架核心 API |
-| [ui-api.md](ui-api.md) | UI 模块 API（UITransformComponent、UITextComponent、UIClickComponent、UIRenderSystem、UIInputSystem） |
+| [ui-api.md](ui-api.md) | UI 与交互模块 API（UITransformComponent、UITextComponent、UIClickComponent、UIDragComponent、GameClickComponent、GameDragComponent、UIRenderSystem、UIInputSystem、GameInputSystem） |
 
 ## 项目结构
 
@@ -24,12 +24,20 @@ game/
     │   │   ├── TransformComponent.js    # 默认 Transform 组件
     │   │   ├── UITransformComponent.js  # UI 定位组件（→ ui-api.md）
     │   │   ├── UITextComponent.js       # UI 文本组件（→ ui-api.md）
-    │   │   └── UIClickComponent.js      # UI 点击组件（→ ui-api.md）
+    │   │   ├── UIClickComponent.js      # UI 点击组件（→ ui-api.md）
+    │   │   ├── UIDragComponent.js       # UI 拖动组件（→ ui-api.md）
+    │   │   ├── GameClickComponent.js    # 游戏层点击组件（→ ui-api.md）
+    │   │   └── GameDragComponent.js     # 游戏层拖动组件（→ ui-api.md）
     │   ├── data/
     │   │   └── ScreenData.js            # 屏幕/画布数据
     │   └── systems/
     │       ├── UIRenderSystem.js         # UI 渲染系统（→ ui-api.md）
-    │       └── UIInputSystem.js          # UI 输入系统（→ ui-api.md）
+    │       ├── UIInputSystem.js          # UI 输入系统（→ ui-api.md）
+    │       └── GameInputSystem.js        # 游戏层输入系统（→ ui-api.md）
+    ├── games/                       # 游戏实现
+    │   └── demogame/                    # 交互演示游戏
+    │       ├── DemoGame.js              # 演示游戏主体
+    │       └── DemoRenderSystem.js      # 演示用渲染系统
     ├── framework/                   # 框架基类
     │   ├── EventDispatcher.js       # 事件派发器
     │   ├── Component.js             # 组件基类
