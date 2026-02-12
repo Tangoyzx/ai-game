@@ -10,6 +10,7 @@
 |------|------|
 | [framework-api.md](framework-api.md)（本文档） | 框架核心 API |
 | [ui-api.md](ui-api.md) | UI 与交互模块 API（UITransformComponent、UITextComponent、UIClickComponent、UIDragComponent、GameClickComponent、GameDragComponent、UIRenderSystem、UIInputSystem、GameInputSystem） |
+| [breakout-api.md](breakout-api.md) | 打砖块游戏 API（BreakoutGame、BreakoutData、BreakoutPhysicsSystem、BreakoutRenderSystem） |
 
 ## 项目结构
 
@@ -35,9 +36,14 @@ game/
     │       ├── UIInputSystem.js          # UI 输入系统（→ ui-api.md）
     │       └── GameInputSystem.js        # 游戏层输入系统（→ ui-api.md）
     ├── games/                       # 游戏实现
-    │   └── demogame/                    # 交互演示游戏
-    │       ├── DemoGame.js              # 演示游戏主体
-    │       └── DemoRenderSystem.js      # 演示用渲染系统
+    │   ├── demogame/                    # 交互演示游戏
+    │   │   ├── DemoGame.js              # 演示游戏主体
+    │   │   └── DemoRenderSystem.js      # 演示用渲染系统
+    │   └── breakout/                    # 打砖块游戏（→ breakout-api.md）
+    │       ├── BreakoutGame.js          # 游戏主体
+    │       ├── BreakoutData.js          # 游戏数据（网格/球状态）
+    │       ├── BreakoutPhysicsSystem.js # 物理碰撞系统
+    │       └── BreakoutRenderSystem.js  # 渲染系统
     ├── framework/                   # 框架基类
     │   ├── EventDispatcher.js       # 事件派发器
     │   ├── Component.js             # 组件基类
